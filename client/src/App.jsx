@@ -1,25 +1,13 @@
-import { EthProvider } from "./contexts/EthContext";
-import Intro from "./components/Intro/";
-import Setup from "./components/Setup";
-import Demo from "./components/Demo";
-import Footer from "./components/Footer";
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <EthProvider>
-      <div id="App">
-        <div className="container">
-          <Intro />
-          <hr />
-          <Setup />
-          <hr />
-          <Demo />
-          <hr />
-          <Footer />
-        </div>
+    <div className="flex bg-indigo-950 text-cyan-50 justify-center h-screen items-center ">
+      <div className='flex items-center justify-center rounded-lg w-1/5 h-28 bg-violet-900 animate-bounce'>
+        <h1 className='text-6xl animate-pulse'>Fya E Voting</h1>
       </div>
-    </EthProvider>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
