@@ -56,6 +56,12 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
+<<<<<<< HEAD
+=======
+
+   contracts_build_directory : "../client/src/contracts",
+
+>>>>>>> 2dd1cfbc12cd8d426a431435120dc7588f7da92f
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
