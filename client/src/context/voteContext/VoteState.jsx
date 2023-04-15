@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const getContractInfo = () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum)
-
+  const contractAddress = "0x9DEa1eC880c836E875F1e48f535a218a87Ea7bF9";
   // MetaMask requires requesting permission to connect users accounts
   // await provider.send("eth_requestAccounts", []);
 
@@ -13,7 +13,7 @@ const getContractInfo = () => {
   // send ether and pay to change state within the blockchain.
   // For this, you need the account signer...
   const signer = provider.getSigner();
-  // const transactionContract = new ether.Contract()   //Address, //ABI, signer)
+  const transactionContract = new ethers.Contract()   //Address, //ABI, signer)
 
   console.log({
     signer,
