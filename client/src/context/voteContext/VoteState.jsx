@@ -1,12 +1,13 @@
 import VoteContext from "./VoteContext";
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
+import Web3 from 'web3';
 import { useNavigate } from "react-router-dom";
 import abi from '../../contracts/vote.json';
 
 const getContractInfo = () => {
   console.log(ethers)
-  const web3Provider = new ethers.providers.Web3Provider(window.ethereum)
+  const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")
   const contractAddress = "0x9DEa1eC880c836E875F1e48f535a218a87Ea7bF9";
   const contractABI = abi.abi;
   // MetaMask requires requesting permission to connect users accounts
@@ -15,11 +16,10 @@ const getContractInfo = () => {
   // The MetaMask plugin also allows signing transactions to
   // send ether and pay to change state within the blockchain.
   // For this, you need the account signer...
-  const signer = web3Provider.getSigner();
-  const transactionContract = new ethers.Contract(contractAddress, contractABI, signer)   //Address, //ABI, signer)
+  // const signer = web3Provider.getSigner();
+  const transactionContract = new ethers.Contract(contractAddress, contractABI)   //Address, //ABI, signer)
 
   console.log({
-    signer,
     provider,
     transactionContract
   })
