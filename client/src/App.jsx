@@ -6,10 +6,16 @@ import { Explore } from './pages/Explore'
 import { Voting } from './pages/Voting'
 import { Contact } from './pages/Contact'
 import { Help } from './pages/Help'
+<<<<<<< HEAD
 import { useEffect } from 'react';
+=======
+import VoteContext from './context/voteContext/VoteContext';
+
+>>>>>>> f419f7a2b87238978c5dfb1ed40645c3c69317a2
 const App = () => {
   let exploreUrlChecker = window.location.href.indexOf("explore") !== -1;
   return (
+<<<<<<< HEAD
     <div className="overflow-hidden w-full" style={{ height: "100vh" }}>
       <Link to="/" className={`absolute ${exploreUrlChecker ? "text-white" : "text-[#504e68]"} z-10 font-semibold top-14 left-14 text-2xl`}>E-VOTING</Link>
       <Navbar />
@@ -23,6 +29,19 @@ const App = () => {
       </Routes>
     </div>
 
+=======
+      <div className="bg-[#6C63FF] overflow-hidden w-full" style={{ height: "100vh" }}>
+        <Link to="/" className='absolute text-[#504e68] z-10 font-semibold top-14 left-14 text-2xl'>E-VOTING</Link>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/explore' element={<Explore />} />
+          <Route exact path='/contact' element={<Contact />} />
+          <Route exact path='/help' element={<Help />} />
+        </Routes>
+      </div>
+>>>>>>> f419f7a2b87238978c5dfb1ed40645c3c69317a2
   )
 }
 
