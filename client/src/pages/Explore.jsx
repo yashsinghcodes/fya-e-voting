@@ -1,5 +1,6 @@
-import React from 'react'
-import {useNavigate, useNavigation} from 'react-router-dom'
+import React, { useContext } from 'react'
+import {useNavigate} from 'react-router-dom'
+import VoteContext from '../context/voteContext/VoteContext';
 export const Explore = () => {
   const btnStyle = "py-3 m-6 px-10 text-lg font-semibold rounded-full";
   const exploreHead = "text-4xl font-semibold"

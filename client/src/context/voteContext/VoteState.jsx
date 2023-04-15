@@ -1,27 +1,30 @@
 import VoteContext from "./VoteContext";
-import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import Web3 from 'web3';
 import { useNavigate } from "react-router-dom";
 import vote from '../../contracts/vote.json';
-
-const getContractInfo = async() => {
-  const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")
-  // const contractABI = abi.abi;
-  const web3 = new Web3(provider)
-  const networkId = await web3.eth.net.getId();
-  const deployedNetwork = vote.networks[networkId];
-  console.log(deployedNetwork.address);
-}
 
 
 export const VoteState = (props) => {
   const Navigate = useNavigate();
 
   const [connectedAccount, setCurrentAccount] = useState();
+  const [state, setState] = useState({ web3: null, contract: null });
+
+  const getContractInfo = async () => {
+    // const conn = checkIfWalletIsConnected();
+    // if (!conn) return alert("Meta Mask is not connected!");
+    const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545")
+    const web3 = new Web3(provider)
+    const networkId = await web3.eth.net.getId();
+    const deployedNetwork = vote.networks[networkId];
+    const contract = new web3.eth.Contract(vote.abi, deployedNetwork.address);
+    setState({ web3, contract });
+  }
+
 
   const checkIfWalletIsConnected = async () => {
-    if (!ethereum) return alert("Please Install MetaMask");
+    if (!ethereum) return alert("Meta Mask not Connected!");
 
     const accounts = await ethereum.request({ method: 'eth_accounts' });
   }
@@ -32,6 +35,7 @@ export const VoteState = (props) => {
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
       setCurrentAccount(accounts[0]);
       getContractInfo();
+
       Navigate("/explore");
     } catch (error) {
       console.log(error);
@@ -43,8 +47,9 @@ export const VoteState = (props) => {
     checkIfWalletIsConnected();
   }, []);
 
+
   return (
-    <VoteContext.Provider value={{ connectWallet }}>
+    <VoteContext.Provider value={{ connectWallet, getContractInfo, state }}>
       {props.children}
     </VoteContext.Provider>
   )

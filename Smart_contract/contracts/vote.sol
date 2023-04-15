@@ -3,7 +3,7 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract vote {
     
-    uint candidateCount;
+    uint public candidateCount;
 
 
     // participating candidates
@@ -41,6 +41,7 @@ contract vote {
         addCandidate("BJP","https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bharatiya_Janata_Party_logo.svg/1200px-Bharatiya_Janata_Party_logo.svg.png");
         addCandidate("INC","https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Indian_National_Congress_logo.svg/800px-Indian_National_Congress_logo.svg.png");
         addCandidate("NDA","https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/National_Democratic_Alliance_logo.svg/800px-National_Democratic_Alliance_logo.svg.png");
+        addCandidate("NOTA","https://upload.wikimedia.org/wikipedia/commons/f/f6/NOTA_Option_Logo.svg");
     
         // voters
         addVoters("Raja","12345678912", 0x12123B2c064b62c54D00a691D84778A1944bC401);
