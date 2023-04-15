@@ -14,7 +14,7 @@ contract vote {
         string img_url;
         uint id;
     }
-    mapping(uint => Candidate) public candDetails;
+    mapping(uint => Candidate)  public candDetails;
 
     function addCandidate(string memory _name, string memory _img_url) public{
         Candidate memory newCandidate = Candidate(_name, 0, _img_url, candidateCount);
@@ -69,6 +69,10 @@ contract vote {
         return result;
     }
 
+    function getCandid(uint id) public view returns(Candidate memory){
+        return candDetails[id];
+    }
+    
     /*
         TODO OR MAY REQUIRED
         
