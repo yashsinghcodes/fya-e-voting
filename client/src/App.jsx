@@ -30,7 +30,7 @@ const App = () => {
   },[])
   return (
     <div className="overflow-hidden w-full" style={{ height: "100vh" }}>
-      <Link to="/" className={`absolute ${exploreUrlChecker ? "text-white" : "text-[#504e68]"} z-10 font-semibold top-14 left-14 text-2xl`}>E-VOTING</Link>
+      <Link to="/" className={`absolute ${exploreUrlChecker ? "text-white" : "text-[#504e68]"} z-10 font-semibold top-14 left-14 text-2xl`}>YUDHISHTHIRA</Link>
       {connectedAccount && <p className='absolute text-sm right-10 top-14 z-10'><strong className='text-base'>User Address</strong> : <br/> {connectedAccount}</p>}
       <Navbar />
       <Routes>
