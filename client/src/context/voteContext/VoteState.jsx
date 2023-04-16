@@ -49,7 +49,7 @@ export const VoteState = (props) => {
 
 
   return (
-    <VoteContext.Provider value={{ connectWallet, getContractInfo, state }}>
+    <VoteContext.Provider value={{ connectWallet, getContractInfo, connectedAccount, state }}>
       {props.children}
     </VoteContext.Provider>
   )

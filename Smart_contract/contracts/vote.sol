@@ -44,18 +44,22 @@ contract vote {
         addCandidate("NOTA","https://upload.wikimedia.org/wikipedia/commons/f/f6/NOTA_Option_Logo.svg");
     
         // voters
-        addVoters("Raja","12345678912", 0x12123B2c064b62c54D00a691D84778A1944bC401);
-        addVoters("Asmi", "666", 0x5E212f598a5c7C4566ae54214aA10dbf53525777);
-        addVoters("Preeti", "0987654321", 0x307b19dC0F1c677bee88D28FAC8760dF77e6b8a4);
+        addVoters("Raja","12345678912", 0x37AfC9Bc5804Fbbb248f59650808AbAF320F2b80);
+        addVoters("Asmi", "666", 0x8fff0a7bf0De63bc0834D23FbeEa7C630CcD94D1);
+        addVoters("Preeti", "0987654321", 0xF8B90B06CBd25146B0d1DC4372f1252973c2C9c3);
     }
 
 
     // voting function
 
-    function voting(uint candId) public{
-        require(voterDetails[msg.sender].hasVoted == false);
+    function voting(uint candId) public returns(bool){
+        require(voterDetails[msg.sender].hasVoted == false, "false");
+        if(voterDetails[msg.sender].hasVoted) return false;
         candDetails[candId].voteCount += 1;
-        voterDetails[msg.sender].hasVoted = true;
+        Voter memory newVote = voterDetails[msg.sender];
+        newVote.hasVoted = true;
+        voterDetails[msg.sender] = newVote;
+        return true;
     }
 
     // return style top to bottom style - i.e accourding to the result in 

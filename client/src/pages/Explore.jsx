@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
 import VoteContext from '../context/voteContext/VoteContext';
 export const Explore = () => {
-  const btnStyle = "py-3 m-6 px-10 text-lg font-semibold rounded-full";
+  const btnStyle = "py-3 m-6 px-10 text-lg hover:shadow-xl font-semibold rounded-full";
   const exploreHead = "text-4xl font-semibold"
   const exploreContainer = "flex flex-col justify-center items-center"
   const Navigate = useNavigate()
