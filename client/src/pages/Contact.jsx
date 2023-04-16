@@ -9,9 +9,9 @@ export const Contact = () => {
 
       <h1 className='text-5xl text-white mb-10 font-semibold'>Contact Us</h1>
       <div>
-      <p className=' text-white text-2xl'>Mail Us - lulzSec@gmail.com</p>
-      <p className=' text-white text-2xl'>Contact - 8696948831, 86969648832</p>
-      <p className=' text-white text-2xl'>Address - Bhilai</p>
+      <p className=' text-white text-xl font-semibold'>Mail Us - <span className='text-slate-100 font-normal'>lulzSec@gmail.com</span></p>
+      <p className=' text-white text-xl font-semibold'>Contact - <span className='text-slate-100 font-normal'>8696948831, 86969648832</span></p>
+      <p className=' text-white text-xl font-semibold'>Address - <span className='text-slate-100 font-normal'>Bhilai</span></p>
       </div>
 
       <svg className='absolute bottom-0 right-0' width="414" height="294" viewBox="0 0 414 294" fill="none" xmlns="http://www.w3.org/2000/svg">

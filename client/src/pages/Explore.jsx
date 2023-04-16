@@ -6,7 +6,6 @@ export const Explore = () => {
   const exploreHead = "text-4xl font-semibold"
   const exploreContainer = "flex flex-col justify-center items-center"
   const Navigate = useNavigate()
-
   const handleClick = ()=>{
     Navigate("/voting")
   }
@@ -15,7 +14,7 @@ export const Explore = () => {
     <div className='w-full flex h-full'>
       <div className={`w-1/2 h-full bg-[#6C63FF] ${exploreContainer}`}>
         <h1 className={`${exploreHead} text-white`}>Request for Custom Polls</h1>
-        <button className={`${btnStyle} bg-white text-[#6C63FF]`}>Request</button>
+        <button onClick={()=>{Navigate("/contact")}} className={`${btnStyle} bg-white text-[#6C63FF]`}>Request</button>
       </div>
       <div className={`bg-white w-1/2 ${exploreContainer}`}>
         <h1 className={`${exploreHead} text-[#6C63FF]`}>Explore Others Polls</h1>

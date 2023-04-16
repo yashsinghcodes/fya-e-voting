@@ -9,6 +9,7 @@ import { Help } from './pages/Help'
 import { useContext, useEffect, useState } from 'react';
 import VoteContext from './context/voteContext/VoteContext';
 import { Contract } from 'ethers';
+import { Admin } from './pages/Admin';
 
 const App = () => {
   const {state, connectedAccount} = useContext(VoteContext);
@@ -35,6 +36,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route exact path='/' element={<Home />} />
+        <Route exact path='/admin' element={<Admin />} />
         <Route exact path='/about' element={<About />} />
         <Route exact path='/explore' element={<Explore />} />
         <Route exact path='/voting' element={<Voting />} />

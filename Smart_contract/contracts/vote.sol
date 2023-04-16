@@ -94,7 +94,7 @@ contract vote {
     }
 
     // return style top to bottom style - i.e accourding to the result in
-    address owner = 0x37AfC9Bc5804Fbbb248f59650808AbAF320F2b80;
+    address public owner = 0x37AfC9Bc5804Fbbb248f59650808AbAF320F2b80;
 
     function getResult() public view returns (uint[][] memory) {
         uint[][] memory result;
