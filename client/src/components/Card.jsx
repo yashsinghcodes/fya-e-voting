@@ -9,9 +9,15 @@ export const Card = ({ id }) => {
 
     const handleClick = async () => {
         const VoterDetails = await contract.methods.voterDetails(connectedAccount).call();
-        const data = await contract.methods.voting(id).call();
-        console.log(data);
-        alert("Your Vote has been Recorded!");
+        const hasVoted = await contract.methods.checkVoted(connectedAccount).call();
+        if (hasVoted){
+            alert("User Has Already Voted");
+        }
+        else{
+            const data = await contract.methods.voting(id).send({from: connectedAccount});
+            console.log(connectedAccount)
+            alert("Your Vote has been Recorded!");
+        }
     }
 
     useEffect(() => {

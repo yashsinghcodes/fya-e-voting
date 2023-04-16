@@ -44,22 +44,23 @@ contract vote {
         addCandidate("NOTA","https://upload.wikimedia.org/wikipedia/commons/f/f6/NOTA_Option_Logo.svg");
     
         // voters
-        addVoters("Raja","12345678912", 0x37AfC9Bc5804Fbbb248f59650808AbAF320F2b80);
-        addVoters("Asmi", "666", 0x8fff0a7bf0De63bc0834D23FbeEa7C630CcD94D1);
-        addVoters("Preeti", "0987654321", 0xF8B90B06CBd25146B0d1DC4372f1252973c2C9c3);
+        addVoters("Raja","12345678912", 0xCACF608D8697480fb31c1767Dc02F6F72E35bC98);
+        addVoters("Asmi", "666", 0xe9E9f64b8760f543F4bD71a3fd1e163A0e9beBc9);
+        addVoters("Preeti", "0987654321", 0x3b1e8cCC9C02d03753E85A620df04AaC70B5BA02);
+        addVoters("Yash", "34243434", 0x53b3e1F292E86f32806BEdF2986B9378EA88C53a);
     }
 
 
     // voting function
 
-    function voting(uint candId) public returns(bool){
-        require(voterDetails[msg.sender].hasVoted == false, "false");
-        if(voterDetails[msg.sender].hasVoted) return false;
+    function voting(uint candId) public{
+        require(voterDetails[msg.sender].hasVoted == false);
         candDetails[candId].voteCount += 1;
-        Voter memory newVote = voterDetails[msg.sender];
-        newVote.hasVoted = true;
-        voterDetails[msg.sender] = newVote;
-        return true;
+        voterDetails[msg.sender].hasVoted = true;
+    }
+
+    function checkVoted(address addr) public view returns(bool){
+        return voterDetails[addr].hasVoted;
     }
 
     // return style top to bottom style - i.e accourding to the result in 
