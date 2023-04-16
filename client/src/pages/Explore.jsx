@@ -14,8 +14,8 @@ export const Explore = () => {
   return (
     <div className='w-full flex h-full'>
       <div className={`w-1/2 h-full bg-[#6C63FF] ${exploreContainer}`}>
-        <h1 className={`${exploreHead} text-white`}>Create Custom Polls</h1>
-        <button className={`${btnStyle} bg-white text-[#6C63FF]`}>Create</button>
+        <h1 className={`${exploreHead} text-white`}>Request for Custom Polls</h1>
+        <button className={`${btnStyle} bg-white text-[#6C63FF]`}>Request</button>
       </div>
       <div className={`bg-white w-1/2 ${exploreContainer}`}>
         <h1 className={`${exploreHead} text-[#6C63FF]`}>Explore Others Polls</h1>
